@@ -1,0 +1,9 @@
+ChronoRover is a precise time signal generator that emulates official long-wave time broadcasts to synchronize radio-controlled watches with atomic accuracy using your phone’s speaker or headphones.
+
+Among the currently supported signals are: DCF77 (Germany), MSF (United Kingdom), WWVB (United States), JJY (Japan), and BPC (China).
+
+Whether you’re a watch enthusiast, collector, or simply want the most accurate time possible, ChronoRover turns your smartphone into a portable time signal transmitter.
+
+Perfect solution for Casio and Citizen owners who live beyond the range of any official time signal transmission station!
+
+**CAUTION! This application generates loud, high-pitched noises that may cause discomfort or potential hearing damage! Leave the room while transmission is active.**

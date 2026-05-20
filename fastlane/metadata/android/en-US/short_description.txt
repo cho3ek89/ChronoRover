@@ -1,0 +1,1 @@
+Accurate time signal generator for radio-controlled watches.
