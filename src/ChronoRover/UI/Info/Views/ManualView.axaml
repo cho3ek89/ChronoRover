@@ -1,0 +1,125 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChronoRover.UI.Info.Views.ManualView">
+    <ContentPage.Header>
+        <TextBlock Text="Manual" Classes="CmdBarHeader" />
+    </ContentPage.Header>
+
+    <ContentPage.Styles>
+        <Style Selector="Grid">
+            <Setter Property="RowSpacing" Value="10" />
+            <Setter Property="ColumnSpacing" Value="7" />
+        </Style>
+
+        <Style Selector="HyperlinkButton PathIcon">
+            <Setter Property="Width" Value="18" />
+            <Setter Property="Height" Value="18" />
+        </Style>
+    </ContentPage.Styles>
+
+    <ScrollViewer>
+        <StackPanel Spacing="15" Margin="15,0">
+            <TextBlock Classes="heading caution"
+                       Text="Caution" />
+            <TextBlock Classes="title caution"
+                       Text="This application generates loud, high-pitched noises that may cause discomfort or potential hearing damage! Leave the room while transmission is active." />
+
+
+            <TextBlock Classes="heading"
+                       Text="Synchronisation" />
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*">
+                <TextBlock Grid.Row="00" Grid.Column="0" Classes="title"
+                           Text="1." />
+                <TextBlock Grid.Row="00" Grid.Column="1" Classes="title"
+                           Text="Configure settings if needed" />
+                <TextBlock Grid.Row="01" Grid.Column="1" Classes="text"
+                           Text="Select the correct signal type (e.g. DCF77)." />
+
+                <TextBlock Grid.Row="02" Grid.Column="0" Classes="title"
+                           Text="2." />
+                <TextBlock Grid.Row="02" Grid.Column="1" Classes="title"
+                           Text="Set volume" />
+                <TextBlock Grid.Row="03" Grid.Column="1" Classes="text"
+                           Text="Adjust your device volume to 80–100%." />
+
+                <TextBlock Grid.Row="04" Grid.Column="0" Classes="title"
+                           Text="3." />
+                <TextBlock Grid.Row="04" Grid.Column="1" Classes="title"
+                           Text="Activate RC mode" />
+                <TextBlock Grid.Row="05" Grid.Column="1" Classes="text"
+                           Text="Manually turn on the wave reception mode on your watch, per its manual." />
+
+                <TextBlock Grid.Row="06" Grid.Column="0" Classes="title"
+                           Text="4." />
+                <TextBlock Grid.Row="06" Grid.Column="1" Classes="title"
+                           Text="Position the watch" />
+                <StackPanel Grid.Row="07" Grid.Column="1">
+                    <TextBlock Classes="text"
+                               Text="Place it immediately adjacent to an external speaker or connected headphones for best results. The built-in speaker is an alternative, though far less reliable due to lower power." />
+                    <HyperlinkButton Click="WatchPositioningPicturesClick">
+                        <StackPanel>
+                            <PathIcon Data="M28 8v16c0 1.104-0.896 2-2 2h-21c0 1.104 0.896 2 2 2h21c1.104 0 2-0.896 2-2v-16c0-1.104-0.896-2-2-2zM27 23v-16c0-1.104-0.896-2-2-2h-21c-1.104 0-2 0.896-2 2v16c0 1.104 0.896 2 2 2h21c1.104 0 2-0.896 2-2zM4 7h21v16h-21v-16zM15.627 17.311l-2.988-3.181-2.989 5.104-2.242-2.343-2.429 5.129h19.055l-4.297-11.245-4.11 6.536zM8 14c1.104 0 2-0.896 2-2s-0.896-2-2-2-2 0.896-2 2 0.896 2 2 2z" />
+                            <TextBlock Text="PICTURES" />
+                        </StackPanel>
+                    </HyperlinkButton>
+                </StackPanel>
+
+                <TextBlock Grid.Row="08" Grid.Column="0" Classes="title"
+                           Text="5." />
+                <TextBlock Grid.Row="08" Grid.Column="1" Classes="title"
+                           Text="Start transmission" />
+                <TextBlock Grid.Row="09" Grid.Column="1" Classes="text"
+                           Text="Tap Play." />
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Classes="title"
+                           Text="6." />
+                <TextBlock Grid.Row="10" Grid.Column="1" Classes="title"
+                           Text="Wait" />
+                <TextBlock Grid.Row="11" Grid.Column="1" Classes="text"
+                           Text="Wait 3–7 minutes for synchronisation completeness." />
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Classes="title"
+                           Text="7." />
+                <TextBlock Grid.Row="12" Grid.Column="1" Classes="title"
+                           Text="Stop transmission" />
+                <TextBlock Grid.Row="13" Grid.Column="1" Classes="text"
+                           Text="Upon sync completion, press the Stop button." />
+            </Grid>
+
+
+            <TextBlock Classes="heading"
+                       Text="Troubleshooting" />
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="Auto, *">
+                <TextBlock Grid.Row="00" Grid.Column="0" Classes="title"
+                           Text="-" />
+                <TextBlock Grid.Row="00" Grid.Column="1" Classes="title"
+                           Text="Wrong signal type" />
+                <TextBlock Grid.Row="01" Grid.Column="1" Classes="text">
+                    <Run Text="Confirm the selected signal type aligns with your watch's capabilities." />
+                    <LineBreak />
+                    <Run Text="On some watches (like Casio or Citizen), the receivable signal type depends on the set home city. For example, if your watch's home city is set to BER, choose DCF77." />
+                </TextBlock>
+
+                <TextBlock Grid.Row="02" Grid.Column="0" Classes="title"
+                           Text="-" />
+                <TextBlock Grid.Row="02" Grid.Column="1" Classes="title"
+                           Text="Insufficient signal power" />
+                <TextBlock Grid.Row="03" Grid.Column="1" Classes="text"
+                           Text="Make sure the volume is high enough. Keep the watch as close to the speaker as possible. Try using external speaker or a headset if you are not, if you are try different one." />
+
+                <TextBlock Grid.Row="04" Grid.Column="0" Classes="title"
+                           Text="-" />
+                <TextBlock Grid.Row="04" Grid.Column="1" Classes="title"
+                           Text="Signal interferences" />
+                <TextBlock Grid.Row="05" Grid.Column="1" Classes="text"
+                           Text="Background noise, music, or other sounds may interfere with the time signal and cause synchronization to fail. For optimal results, use the application in a quiet room." />
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+
+</ContentPage>

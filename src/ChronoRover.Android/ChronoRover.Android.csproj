@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0-android</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ApplicationId>com.cho3ek89.ChronoRover</ApplicationId>
+        <SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.Android"/>
+        <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ChronoRover\ChronoRover.csproj"/>
+    </ItemGroup>
+</Project>

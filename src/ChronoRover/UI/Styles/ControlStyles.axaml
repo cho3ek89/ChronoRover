@@ -1,0 +1,125 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="using:ChronoRover.UI.Controls">
+
+    <!-- TextBlock styles -->
+
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultGradient}" />
+    </Style>
+
+    <Style Selector="TextBlock.CmdBarHeader">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultColor}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource OrbitronMedium}" />
+    </Style>
+
+    <Style Selector="TextBlock.text">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Opacity" Value="95" />
+    </Style>
+
+    <Style Selector="TextBlock.title">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style Selector="TextBlock.heading">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontWeight" Value="UltraBold" />
+        <Setter Property="LetterSpacing" Value="2" />
+    </Style>
+
+    <Style Selector="TextBlock.caution">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{DynamicResource SystemErrorTextColor}" />
+    </Style>
+
+    <!-- NavigationPage styles -->
+
+    <Style Selector="NavigationPage /template/ Border#PART_NavigationBar">
+        <Setter Property="CornerRadius" Value="0,0,7,7" />
+        <Setter Property="Background" Value="{DynamicResource DefaultGradient}" />
+    </Style>
+
+    <Style Selector="NavigationPage /template/ Border#PART_NavigationBar CommandBarButton">
+        <Style Selector="^:pointerover /template/ Border">
+            <Setter Property="Background" Value="{DynamicResource DefaultGradientPointerOver}" />
+        </Style>
+
+        <Style Selector="^:pressed /template/ Border">
+            <Setter Property="Background" Value="{DynamicResource DefaultGradientPressed}" />
+        </Style>
+    </Style>
+
+    <Style Selector="CommandBarButton PathIcon">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+    </Style>
+
+    <!-- Button styles -->
+
+    <Style Selector="Button">
+        <Setter Property="Background" Value="{DynamicResource DefaultGradient}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+        <Style Selector="^:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource DefaultGradientPointerOver}" />
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource DefaultGradientPressed}" />
+        </Style>
+        <Style Selector="^:disabled /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource DefaultGradient}" />
+        </Style>
+    </Style>
+
+    <Style Selector="Button PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultColor}" />
+    </Style>
+
+    <Style Selector="Button:disabled PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultColorDisabled}" />
+    </Style>
+
+    <Style Selector="Button.large">
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Width" Value="80" />
+        <Setter Property="Height" Value="80" />
+    </Style>
+
+    <Style Selector="Button.large PathIcon">
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+    </Style>
+
+    <!-- HyperlinkButton styles -->
+
+    <Style Selector="HyperlinkButton">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style Selector="HyperlinkButton > StackPanel">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+
+    <Style Selector="HyperlinkButton PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultGradient}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="HyperlinkButton TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource DefaultGradient}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- AvaPlotExt styles -->
+
+    <Style Selector="ctrl|AvaPlotExt">
+        <Setter Property="LinesBrush" Value="{DynamicResource SecondaryColor}" />
+    </Style>
+
+</Styles>

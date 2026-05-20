@@ -1,0 +1,32 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChronoRover.UI.Info.Views.InfoView">
+    <ContentPage.Header>
+        <TextBlock Text="Info" Classes="CmdBarHeader" />
+    </ContentPage.Header>
+
+    <ContentPage.Styles>
+        <Style Selector="ListBoxItem">
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <!-- workaround for a high ListBoxItem with centered text -->
+                        <Grid Height="35">
+                            <TextBlock Text="{Binding $parent[ListBoxItem].Content, Mode=OneWay}"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Styles>
+
+    <StackPanel HorizontalAlignment="Stretch">
+        <ListBoxItem Content="Manual" Tapped="ManualClick" />
+        <ListBoxItem Content="About" Tapped="AboutClick" />
+    </StackPanel>
+
+</ContentPage>

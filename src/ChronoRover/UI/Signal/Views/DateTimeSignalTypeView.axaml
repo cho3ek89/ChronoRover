@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="using:ChronoRover.UI.Converters"
+             xmlns:vm="using:ChronoRover.UI.Signal.ViewModels"
+             mc:Ignorable="d"
+             x:DataType="vm:DateTimeSignalTypeViewModel"
+             x:Class="ChronoRover.UI.Signal.Views.DateTimeSignalTypeView">
+
+    <UserControl.Resources>
+        <c:DateTimeToStringConverter x:Key="DateTimeToStrConv" />
+        <c:EnumToStringConverter x:Key="EnumToStrConv" />
+    </UserControl.Resources>
+
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource DefaultGradient}" />
+            <Setter Property="FontFamily" Value="{StaticResource G7Cube5}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style Selector="TextBlock.centered">
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Styles>
+
+    <DockPanel LastChildFill="False" HorizontalSpacing="30">
+        <TextBlock DockPanel.Dock="Bottom"
+                   Text="{Binding DateTimeViewModel.DateTime, Converter={StaticResource DateTimeToStrConv}, ConverterParameter='ss', Mode=OneWay}"
+                   Classes="centered"
+                   Padding="15,0,0,0"
+                   FontSize="100" />
+
+        <TextBlock DockPanel.Dock="Bottom"
+                   Text="{Binding DateTimeViewModel.DateTime, Converter={StaticResource DateTimeToStrConv}, ConverterParameter='HH:mm', Mode=OneWay}"
+                   Classes="centered"
+                   Padding="5,7,0,-10"
+                   FontSize="35" />
+
+        <TextBlock DockPanel.Dock="Left"
+                   Text="{Binding DateTimeViewModel.DateTime, Converter={StaticResource DateTimeToStrConv}, ConverterParameter='yyyy-MM-dd', Mode=OneWay}"
+                   Padding="2,0,0,0" />
+
+        <TextBlock DockPanel.Dock="Right"
+                   Text="{Binding SignalTypeViewModel.SignalType, Converter={StaticResource EnumToStrConv}, Mode=OneWay}"
+                   Width="97"
+                   TextAlignment="Right" />
+    </DockPanel>
+
+</UserControl>

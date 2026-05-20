@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <LinearGradientBrush x:Key="DefaultGradient" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FF3A3A3A" Offset="0.00" />
+                <GradientStop Color="#FF323232" Offset="0.18" />
+                <GradientStop Color="#FF292929" Offset="0.48" />
+                <GradientStop Color="#FF1F1F1F" Offset="0.72" />
+                <GradientStop Color="#FF161616" Offset="1.00" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientPointerOver" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FF2F2F2F" Offset="0.00" />
+                <GradientStop Color="#FF272727" Offset="0.18" />
+                <GradientStop Color="#FF1F1F1F" Offset="0.48" />
+                <GradientStop Color="#FF171717" Offset="0.72" />
+                <GradientStop Color="#FF101010" Offset="1.00" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientPressed" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FF2A2A2A" Offset="0.00" />
+                <GradientStop Color="#FF1F1F1F" Offset="0.18" />
+                <GradientStop Color="#FF191919" Offset="0.48" />
+                <GradientStop Color="#FF121212" Offset="0.72" />
+                <GradientStop Color="#FF0A0A0A" Offset="1.00" />
+            </LinearGradientBrush>
+
+            <Color x:Key="Color1">#FFD6DBE3</Color>
+
+            <SolidColorBrush x:Key="DefaultColor" Color="{DynamicResource Color1}" />
+            <SolidColorBrush x:Key="DefaultColorDisabled" Color="#FF8C9199" />
+            <SolidColorBrush x:Key="SecondaryColor" Color="#FF1F1F1F" />
+
+            <SolidColorBrush x:Key="NavigationBarForeground" Color="{DynamicResource Color1}" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <LinearGradientBrush x:Key="DefaultGradient" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FFF6F8FA" Offset="0.00" />
+                <GradientStop Color="#FFEFF2F5" Offset="0.18" />
+                <GradientStop Color="#FFE6E9EE" Offset="0.48" />
+                <GradientStop Color="#FFDBDFE6" Offset="0.72" />
+                <GradientStop Color="#FFD1D6DE" Offset="1.00" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientPointerOver" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FFE8EBEE" Offset="0.00" />
+                <GradientStop Color="#FFE0E4EA" Offset="0.18" />
+                <GradientStop Color="#FFD6DBE3" Offset="0.48" />
+                <GradientStop Color="#FFC9D1DC" Offset="0.72" />
+                <GradientStop Color="#FFBCC6D2" Offset="1.00" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientPressed" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FFE2E6EB" Offset="0.00" />
+                <GradientStop Color="#FFD7DCE3" Offset="0.18" />
+                <GradientStop Color="#FFCAD1DB" Offset="0.48" />
+                <GradientStop Color="#FFBCC4D0" Offset="0.72" />
+                <GradientStop Color="#FFAEB8C6" Offset="1.00" />
+            </LinearGradientBrush>
+
+            <Color x:Key="Color1">#FF1F1F1F</Color>
+
+            <SolidColorBrush x:Key="DefaultColor" Color="{DynamicResource Color1}" />
+            <SolidColorBrush x:Key="DefaultColorDisabled" Color="#FF8A8F98" />
+            <SolidColorBrush x:Key="SecondaryColor" Color="#FFD6DBE3" />
+
+            <SolidColorBrush x:Key="NavigationBarForeground" Color="{DynamicResource Color1}" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

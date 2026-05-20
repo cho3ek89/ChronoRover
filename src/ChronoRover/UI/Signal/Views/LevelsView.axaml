@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ChronoRover.UI.Signal.ViewModels"
+             mc:Ignorable="d"
+             x:DataType="vm:LevelsViewModel"
+             x:Class="ChronoRover.UI.Signal.Views.LevelsView">
+    <UserControl.Styles>
+        <Style Selector="ProgressBar">
+            <Setter Property="Foreground" Value="{DynamicResource DefaultGradient}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="0,5,5,0" />
+            <Setter Property="Height" Value="10" />
+            <Setter Property="Minimum" Value="0.0" />
+            <Setter Property="Maximum" Value="1.0" />
+            <Setter Property="Opacity" Value="0.6" />
+            <Setter Property="Value" Value="{Binding Peak, Mode=OneWay}" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid ColumnDefinitions="5*,5*">
+        <ProgressBar Grid.Column="0"
+                     FlowDirection="RightToLeft"
+                     MinWidth="0" />
+
+        <ProgressBar Grid.Column="1"
+                     MinWidth="0" /> <!-- doesn't work if set in style -->
+    </Grid>
+</UserControl>

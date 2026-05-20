@@ -1,0 +1,8 @@
+﻿<Solution>
+  <Project Path="ChronoRover.Android/ChronoRover.Android.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="ChronoRover.Desktop/ChronoRover.Desktop.csproj" />
+  <Project Path="ChronoRover.Tests/ChronoRover.Tests.csproj" />
+  <Project Path="ChronoRover/ChronoRover.csproj" />
+</Solution>

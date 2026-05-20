@@ -1,0 +1,43 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="using:ChronoRover.UI.Converters"
+             xmlns:vm="using:ChronoRover.UI.Dialogs.ViewModels"
+             mc:Ignorable="d"
+             x:DataType="vm:ErrorViewModel"
+             x:Class="ChronoRover.UI.Dialogs.Views.ErrorView">
+    <ContentPage.Header>
+        <TextBlock Text="Error" Classes="CmdBarHeader" />
+    </ContentPage.Header>
+
+    <ContentPage.Resources>
+        <c:ExceptionToStringConverter x:Key="ExToStrConv" />
+    </ContentPage.Resources>
+
+    <ContentPage.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="AcceptsReturn" Value="False" />
+            <Setter Property="AcceptsTab" Value="True" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Focusable" Value="False" />
+        </Style>
+    </ContentPage.Styles>
+
+    <ScrollViewer>
+        <StackPanel Margin="15,0" Spacing="3" MinHeight="300">
+
+            <TextBlock Classes="heading" Text="Error:" />
+
+            <TextBox Text="{Binding Title, Mode=OneWay}" />
+
+            <TextBlock Classes="heading" Text="Details:" />
+
+            <TextBox Text="{Binding Exception, Mode=OneWay, Converter={StaticResource ExToStrConv}}" />
+
+        </StackPanel>
+    </ScrollViewer>
+
+</ContentPage>
