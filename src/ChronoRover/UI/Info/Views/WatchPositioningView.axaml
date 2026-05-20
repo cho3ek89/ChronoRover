@@ -1,0 +1,44 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ChronoRover.UI.Info.ViewModels"
+             mc:Ignorable="d"
+             x:DataType="vm:WatchPositioningViewModel"
+             x:Class="ChronoRover.UI.Info.Views.WatchPositioningView">
+    <ContentPage.Header>
+        <TextBlock Text="Positioning" Classes="CmdBarHeader" />
+    </ContentPage.Header>
+
+    <ScrollViewer>
+        <Grid RowDefinitions="*, Auto" Margin="15,0">
+            <Carousel Grid.Row="0"
+                      Name="ManualSlides"
+                      SelectedIndex="{Binding SelectedImageIndex, Mode=TwoWay}"
+                      ItemsSource="{Binding Images, Mode=OneWay}"
+                      MaxWidth="800"
+                      MaxHeight="600">
+                <Carousel.PageTransition>
+                    <PageSlide Duration="0:00:00.200" Orientation="Horizontal" />
+                </Carousel.PageTransition>
+                <Carousel.ItemTemplate>
+                    <DataTemplate>
+                        <Image RenderOptions.BitmapInterpolationMode="HighQuality" />
+                    </DataTemplate>
+                </Carousel.ItemTemplate>
+            </Carousel>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button Classes="large" Command="{Binding SelectPreviousImageCommand}">
+                    <PathIcon Data="M7.82842 8.00003L12.4142 3.41424L9.58578 0.585815L2.17157 8.00003L9.58578 15.4142L12.4142 12.5858L7.82842 8.00003Z" />
+                </Button>
+
+                <Button Classes="large" Command="{Binding SelectNextImageCommand}">
+                    <PathIcon Data="M8.1716 8.00003L3.58582 3.41424L6.41424 0.585815L13.8285 8.00003L6.41424 15.4142L3.58582 12.5858L8.1716 8.00003Z" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</ContentPage>

@@ -1,0 +1,11 @@
+dotnet publish '../src/ChronoRover.Android/ChronoRover.Android.csproj' \
+-o '../binaries' \
+-c 'Release' \
+-r 'android-arm64' \
+-v 'normal' \
+-p:AndroidKeyStore=False \
+-p:AndroidPackageFormat='apk' \
+-p:ApplicationVersion='1' \
+-p:ApplicationDisplayVersion='1.0.0' \
+-p:RunAOTCompilation=False \
+-p:AndroidEnableProfiledAot=False

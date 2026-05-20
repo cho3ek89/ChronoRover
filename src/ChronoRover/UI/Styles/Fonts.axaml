@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Exo2Bold">avares://ChronoRover/Assets/Fonts/Exo2-Bold.ttf#Exo 2 Bold</FontFamily>
+    <FontFamily x:Key="G7Cube5">avares://ChronoRover/Assets/Fonts/G7_Cube_5.ttf#G7 Cube 5</FontFamily>
+    <FontFamily x:Key="OrbitronMedium">avares://ChronoRover/Assets/Fonts/Orbitron-Medium.ttf#Orbitron Medium</FontFamily>
+
+</ResourceDictionary>

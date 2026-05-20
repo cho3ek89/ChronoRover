@@ -1,0 +1,124 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  version_code: 10000
+  version: 1.0.0
+
+jobs:
+  build_android:
+    name: Build for Android
+
+    strategy:
+      matrix:
+        runtime: [android-arm64]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: '10.0.300'
+
+      - name: Setup JDK
+        uses: actions/setup-java@v5.2.0
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Save decoded keystore
+        id: save_decoded_keystore
+        uses: timheuer/base64-to-file@v2
+        with:
+          fileName: 'keystore.jks'
+          encodedString: ${{ secrets.ANDROID_SIGNING_KEYSTORE_BASE64 }}
+
+      - name: Install Android Workload
+        run: dotnet workload install android
+
+      - name: Run unit tests
+        run: >
+          dotnet test 'src/ChronoRover.Tests/ChronoRover.Tests.csproj'
+          -c 'Release'
+          -r 'android-x64'
+          -v 'normal'
+
+      - name: Publish
+        run: >
+          dotnet publish 'src/ChronoRover.Android/ChronoRover.Android.csproj'
+          -o 'binaries'
+          -c 'Release'
+          -r '${{ matrix.runtime }}'
+          -v 'normal'
+          -p:AndroidKeyStore=True
+          -p:AndroidSigningKeyStore='${{ steps.save_decoded_keystore.outputs.filePath }}'
+          -p:AndroidSigningStorePass='${{ secrets.ANDROID_SIGNING_KEYSTORE_PASS }}'
+          -p:AndroidSigningKeyAlias='${{ secrets.ANDROID_SIGNING_KEY_ALIAS }}'
+          -p:AndroidSigningKeyPass='${{ secrets.ANDROID_SIGNING_KEY_PASS }}'
+          -p:ApplicationVersion=${{ env.version_code }}
+          -p:ApplicationDisplayVersion=${{ env.version }}
+          -p:RunAOTCompilation=False
+          -p:AndroidEnableProfiledAot=False
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ChronoRover_${{ matrix.runtime }}_${{ env.version }}
+          compression-level: 9
+          path: |
+            binaries/*-Signed.*
+
+
+  build_desktop:
+    name: Build for Desktop
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        runtime: [win-x64, linux-x64]
+        exclude:
+          - os: windows-latest
+            runtime: linux-x64
+          - os: ubuntu-latest
+            runtime: win-x64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: '10.0.300'
+
+      - name: Run unit tests
+        run: >
+          dotnet test 'src/ChronoRover.Tests/ChronoRover.Tests.csproj'
+          -c 'Release'
+          -r '${{ matrix.runtime }}'
+          -v 'normal'
+
+      - name: Publish
+        run: >
+          dotnet publish 'src/ChronoRover.Desktop/ChronoRover.Desktop.csproj'
+          -o 'binaries'
+          -c 'Release'
+          -r '${{ matrix.runtime }}'
+          -v 'normal'
+          -p:Version=${{ env.version }}
+          -p:PublishAot=True
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ChronoRover_${{ matrix.runtime }}_${{ env.version }}
+          compression-level: 9
+          path: |
+            binaries/
+            !binaries/**/*.pdb
