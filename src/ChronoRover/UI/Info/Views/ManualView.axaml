@@ -93,7 +93,7 @@
 
             <TextBlock Classes="heading"
                        Text="Troubleshooting" />
-            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                   ColumnDefinitions="Auto, *">
                 <TextBlock Grid.Row="00" Grid.Column="0" Classes="title"
                            Text="-" />
@@ -118,6 +118,16 @@
                            Text="Signal interferences" />
                 <TextBlock Grid.Row="05" Grid.Column="1" Classes="text"
                            Text="Background noise, music, or other sounds may interfere with the time signal and cause synchronization to fail. For optimal results, use the application in a quiet room." />
+
+                <TextBlock Grid.Row="06" Grid.Column="0" Classes="title"
+                           Text="-" />
+                <TextBlock Grid.Row="06" Grid.Column="1" Classes="title"
+                           Text="Watch is slow after synchronization" />
+                <TextBlock Grid.Row="07" Grid.Column="1" Classes="text">
+                    <Run Text="Your watch may be a few hundred milliseconds slow after synchronization. This can occasionally be caused by the headset you are using. Try another one!" />
+                    <LineBreak />
+                    <Run Text="During our testing, the simplest and cheapest cable models delivered the best (and perfect) accuracy." />
+                </TextBlock>
             </Grid>
         </StackPanel>
     </ScrollViewer>
