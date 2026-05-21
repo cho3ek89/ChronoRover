@@ -6,9 +6,11 @@ using ChronoRover.UI.Info.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ChronoRover.UI.Info.Views;
 
+[SuppressMessage("ReSharper", "AsyncVoidEventHandlerMethod")]
 public partial class ManualView : ContentPage
 {
     private readonly IServiceProvider _serviceProvider;
@@ -25,9 +27,9 @@ public partial class ManualView : ContentPage
         DataContext = _serviceProvider.GetRequiredService<InfoViewModel>();
     }
 
-    private void WatchPositioningPicturesClick(object sender, RoutedEventArgs e)
+    private async void WatchPositioningPicturesClick(object sender, RoutedEventArgs e)
     {
         var view = _serviceProvider.GetRequiredService<WatchPositioningView>();
-        Navigation!.PushAsync(view);
+        await Navigation!.PushAsync(view);
     }
 }
