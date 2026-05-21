@@ -132,7 +132,8 @@ public class App : Application
         services.AddTransient<ISettingsProvider, DefaultSettingsProvider>();
         services.AddSingleton<ISettingsManager, SettingsManager>();
 
-        services.AddSingleton<AudioEngine, MiniAudioEngine>();
+        // It has to be added from factory lambda, otherwise it crashes Native AOT execution!
+        services.AddSingleton<AudioEngine, MiniAudioEngine>(_ => new MiniAudioEngine());
 
         services.AddSingleton(serviceProvider =>
         {
