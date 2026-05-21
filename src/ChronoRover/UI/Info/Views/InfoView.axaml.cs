@@ -6,9 +6,11 @@ using ChronoRover.UI.Info.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ChronoRover.UI.Info.Views;
 
+[SuppressMessage("ReSharper", "AsyncVoidEventHandlerMethod")]
 public partial class InfoView : ContentPage
 {
     private readonly IServiceProvider _serviceProvider;
@@ -25,15 +27,15 @@ public partial class InfoView : ContentPage
         DataContext = _serviceProvider.GetRequiredService<InfoViewModel>();
     }
 
-    private void ManualClick(object sender, RoutedEventArgs e)
+    private async void ManualClick(object sender, RoutedEventArgs e)
     {
         var view = _serviceProvider.GetRequiredService<ManualView>();
-        Navigation!.PushAsync(view);
+        await Navigation!.PushAsync(view);
     }
 
-    private void AboutClick(object sender, RoutedEventArgs e)
+    private async void AboutClick(object sender, RoutedEventArgs e)
     {
         var view = _serviceProvider.GetRequiredService<AboutView>();
-        Navigation!.PushAsync(view);
+        await Navigation!.PushAsync(view);
     }
 }

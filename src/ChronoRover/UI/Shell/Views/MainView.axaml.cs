@@ -11,9 +11,11 @@ using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ChronoRover.UI.Shell.Views;
 
+[SuppressMessage("ReSharper", "AsyncVoidMethod")]
 public partial class MainView : UserControl
 {
     private readonly IServiceProvider _serviceProvider;
@@ -31,14 +33,15 @@ public partial class MainView : UserControl
 
         DataContext = _serviceProvider.GetRequiredService<MainViewModel>();
 
-        Navigator.PushAsync(_serviceProvider.GetRequiredService<SignalView>());
+        Navigator.PushAsync(_serviceProvider.GetRequiredService<SignalView>())
+            .GetAwaiter().GetResult();
     }
 
     private void SubscribeForErrors()
     {
         var messenger = _serviceProvider.GetRequiredService<IMessenger>();
 
-        messenger.Register<ErrorMessage>(this, (_, error) =>
+        messenger.Register<ErrorMessage>(this, async void (_, error) =>
         {
             var errorView = _serviceProvider.GetRequiredService<ErrorView>();
             var errorViewModel = errorView.DataContext as ErrorViewModel;
@@ -47,7 +50,7 @@ public partial class MainView : UserControl
             errorViewModel!.Title = title;
             errorViewModel!.Exception = ex;
 
-            Navigator!.PushAsync(errorView);
+            await Navigator.PushAsync(errorView);
         });
     }
 }

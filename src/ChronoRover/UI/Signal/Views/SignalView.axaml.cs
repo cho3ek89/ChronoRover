@@ -8,9 +8,11 @@ using ChronoRover.UI.Signal.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ChronoRover.UI.Signal.Views;
 
+[SuppressMessage("ReSharper", "AsyncVoidEventHandlerMethod")]
 public partial class SignalView : ContentPage
 {
     private readonly IServiceProvider _serviceProvider;
@@ -27,15 +29,15 @@ public partial class SignalView : ContentPage
         DataContext = _serviceProvider.GetRequiredService<SignalViewModel>();
     }
 
-    private void SignalTypeSelectButtonClicked(object sender, RoutedEventArgs e)
+    private async void SignalTypeSelectButtonClicked(object sender, RoutedEventArgs e)
     {
         var view = _serviceProvider.GetRequiredService<SignalTypeSelectView>();
-        Navigation!.PushAsync(view);
+        await Navigation!.PushAsync(view);
     }
 
-    private void InfoButtonClicked(object sender, RoutedEventArgs e)
+    private async void InfoButtonClicked(object sender, RoutedEventArgs e)
     {
         var view = _serviceProvider.GetRequiredService<InfoView>();
-        Navigation!.PushAsync(view);
+        await Navigation!.PushAsync(view);
     }
 }
