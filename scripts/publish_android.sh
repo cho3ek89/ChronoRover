@@ -4,8 +4,9 @@ dotnet publish '../src/ChronoRover.Android/ChronoRover.Android.csproj' \
 -r 'android-arm64' \
 -v 'normal' \
 -p:AndroidKeyStore=False \
--p:AndroidPackageFormat='apk' \
 -p:ApplicationVersion='1' \
 -p:ApplicationDisplayVersion='1.0.0' \
+-p:AndroidPackageFormat='apk' \
 -p:RunAOTCompilation=False \
--p:AndroidEnableProfiledAot=False
+-p:AndroidEnableProfiledAot=False \
+-p:ContinuousIntegrationBuild=False

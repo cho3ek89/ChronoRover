@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  version_code: 10000
-  version: 1.0.0
+  version_code: 10001
+  version: 1.0.1
 
 jobs:
   build_android:
@@ -63,16 +63,20 @@ jobs:
           -p:AndroidSigningKeyPass='${{ secrets.ANDROID_SIGNING_KEY_PASS }}'
           -p:ApplicationVersion=${{ env.version_code }}
           -p:ApplicationDisplayVersion=${{ env.version }}
+          -p:AndroidPackageFormat='apk'
           -p:RunAOTCompilation=False
           -p:AndroidEnableProfiledAot=False
+          -p:ContinuousIntegrationBuild=True
+          
+      - name: Prepare artifacts
+        run: |
+          mv binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: ChronoRover_${{ matrix.runtime }}_${{ env.version }}
-          compression-level: 9
-          path: |
-            binaries/*-Signed.*
+          archive: false
+          path: binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
 
 
   build_desktop:
