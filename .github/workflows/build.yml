@@ -32,6 +32,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Setup additional tools
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install strip-nondeterminism 
+
       - name: Save decoded keystore
         id: save_decoded_keystore
         uses: timheuer/base64-to-file@v2
@@ -68,6 +73,10 @@ jobs:
           -p:AndroidEnableProfiledAot=False
           -p:ContinuousIntegrationBuild=True
           -p:Deterministic=True
+
+      - name: Strip timestamps from apk
+        run: |
+           strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover-Signed.apk
           
       - name: Prepare artifacts
         run: |
