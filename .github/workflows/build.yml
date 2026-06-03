@@ -79,6 +79,17 @@ jobs:
         run: |
           $ANDROID_HOME/build-tools/36.0.0/zipalign -P 16 -f -v 4 binaries/com.cho3ek89.ChronoRover-1.apk binaries/com.cho3ek89.ChronoRover-2.apk
 
+
+      - name: Sign apk
+        run: >
+          $ANDROID_HOME/build-tools/36.0.0/apksigner sign
+          --ks '${{ steps.save_decoded_keystore.outputs.filePath }}'
+          --ks-key-alias ${{ secrets.ANDROID_SIGNING_KEY_ALIAS }}
+          --ks-pass pass:${{ secrets.ANDROID_SIGNING_KEYSTORE_PASS }}
+          --key-pass pass:${{ secrets.ANDROID_SIGNING_KEY_PASS }}
+          --out binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
+          binaries/com.cho3ek89.ChronoRover-2.apk
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
         with:
