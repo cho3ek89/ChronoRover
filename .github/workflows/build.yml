@@ -67,6 +67,7 @@ jobs:
           -p:RunAOTCompilation=False
           -p:AndroidEnableProfiledAot=False
           -p:ContinuousIntegrationBuild=True
+          -p:Deterministic=True
           
       - name: Prepare artifacts
         run: |
@@ -117,6 +118,8 @@ jobs:
           -v 'normal'
           -p:Version=${{ env.version }}
           -p:PublishAot=True
+          -p:ContinuousIntegrationBuild=True
+          -p:Deterministic=True
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
