@@ -77,7 +77,7 @@ jobs:
       - name: Strip timestamps from apk
         run: |
            strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover-Signed.apk
-          
+
       - name: Prepare artifacts
         run: |
           mv binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
