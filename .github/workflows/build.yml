@@ -35,7 +35,7 @@ jobs:
       - name: Setup additional tools
         run: |
           sudo apt-get update
-          sudo apt-get -y install strip-nondeterminism zipalign apksigcopier
+          sudo apt-get -y install strip-nondeterminism
 
       - name: Save decoded keystore
         id: save_decoded_keystore
@@ -78,9 +78,8 @@ jobs:
         run: |
           cp binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/input.apk
           strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/input.apk
-          zipalign -f 4 binaries/input.apk binaries/aligned.apk
-          apksigcopier copy binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/aligned.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
-          rm binaries/input.apk binaries/aligned.apk
+          zipalign -f 4 binaries/input.apk binaries/aligned.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
+          rm binaries/input.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
