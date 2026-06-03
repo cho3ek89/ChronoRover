@@ -61,11 +61,7 @@ jobs:
           -c 'Release'
           -r '${{ matrix.runtime }}'
           -v 'normal'
-          -p:AndroidKeyStore=True
-          -p:AndroidSigningKeyStore='${{ steps.save_decoded_keystore.outputs.filePath }}'
-          -p:AndroidSigningStorePass='${{ secrets.ANDROID_SIGNING_KEYSTORE_PASS }}'
-          -p:AndroidSigningKeyAlias='${{ secrets.ANDROID_SIGNING_KEY_ALIAS }}'
-          -p:AndroidSigningKeyPass='${{ secrets.ANDROID_SIGNING_KEY_PASS }}'
+          -p:AndroidKeyStore=False
           -p:ApplicationVersion=${{ env.version_code }}
           -p:ApplicationDisplayVersion=${{ env.version }}
           -p:AndroidPackageFormat='apk'
@@ -76,10 +72,11 @@ jobs:
 
       - name: Strip timestamps from apk
         run: |
-          cp binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/input.apk
-          strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/input.apk
-          zipalign -f 4 binaries/input.apk binaries/aligned.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
-          rm binaries/input.apk
+          strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover.apk
+
+      - name: Align apk
+        run: |
+          zipalign -P 16 -f -v 4 binaries/com.cho3ek89.ChronoRover.apk binaries/com.cho3ek89.ChronoRover-2.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
