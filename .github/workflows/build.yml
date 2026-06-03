@@ -76,11 +76,11 @@ jobs:
 
       - name: Strip timestamps from apk
         run: |
-           strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover-Signed.apk
-
-      - name: Prepare artifacts
-        run: |
-          mv binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
+          cp binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/input.apk
+          strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/input.apk
+          zipalign -f 4 binaries/input.apk binaries/aligned.apk
+          apksigcopier copy binaries/com.cho3ek89.ChronoRover-Signed.apk binaries/aligned.apk binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
+          rm binaries/input.apk binaries/aligned.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
