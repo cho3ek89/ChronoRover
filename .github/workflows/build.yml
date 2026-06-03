@@ -72,12 +72,12 @@ jobs:
 
       - name: Strip timestamps from apk
         run: |
-          strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover.apk
+          cp binaries/com.cho3ek89.ChronoRover.apk binaries/com.cho3ek89.ChronoRover-1.apk
+          strip-nondeterminism --timestamp=0 --verbose --type=zip binaries/com.cho3ek89.ChronoRover-1.apk
 
       - name: Align apk
         run: |
-          ls -l /usr/local/lib/android/sdk/build-tools
-          # zipalign -P 16 -f -v 4 binaries/com.cho3ek89.ChronoRover.apk binaries/com.cho3ek89.ChronoRover-2.apk
+          $ANDROID_HOME/build-tools/34.0.0/zipalign -P 16 -f -v 4 binaries/com.cho3ek89.ChronoRover-1.apk binaries/com.cho3ek89.ChronoRover-2.apk
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.1
