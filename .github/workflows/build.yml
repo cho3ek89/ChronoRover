@@ -76,7 +76,7 @@ jobs:
 
       - name: Align apk
         run: |
-          ls -l /usr/local/lib/android/sdk
+          ls -l /usr/local/lib/android/sdk/build-tools
           # zipalign -P 16 -f -v 4 binaries/com.cho3ek89.ChronoRover.apk binaries/com.cho3ek89.ChronoRover-2.apk
 
       - name: Upload artifacts
