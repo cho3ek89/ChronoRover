@@ -67,8 +67,6 @@ jobs:
           -p:AndroidPackageFormat='apk'
           -p:RunAOTCompilation=False
           -p:AndroidEnableProfiledAot=False
-          -p:AndroidUseAssemblyStore=False
-          -p:AndroidEnableAssemblyCompression=False
           -p:ContinuousIntegrationBuild=True
           -p:Deterministic=True
 
@@ -96,7 +94,6 @@ jobs:
         with:
           archive: false
           path: binaries/ChronoRover_${{ matrix.runtime }}_${{ env.version }}.apk
-
 
 
   build_desktop:
