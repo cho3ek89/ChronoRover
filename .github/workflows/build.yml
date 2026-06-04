@@ -46,8 +46,7 @@ jobs:
           encodedString: ${{ secrets.ANDROID_SIGNING_KEYSTORE_BASE64 }}
 
       - name: Install Android Workload
-        run: |
-          dotnet workload restore 'src/ChronoRover.Android/ChronoRover.Android.csproj'
+        run: dotnet workload restore 'src/ChronoRover.Android/ChronoRover.Android.csproj'
 
       - name: Run unit tests
         run: >
