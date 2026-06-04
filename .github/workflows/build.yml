@@ -46,7 +46,7 @@ jobs:
           encodedString: ${{ secrets.ANDROID_SIGNING_KEYSTORE_BASE64 }}
 
       - name: Install Android Workload
-        run: dotnet workload install android
+        run: sudo dotnet workload install android
 
       - name: Run unit tests
         run: >
