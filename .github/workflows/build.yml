@@ -36,7 +36,7 @@ jobs:
       - name: Setup additional tools
         run: |
           sudo apt-get update
-          sudo apt-get -y install faketime
+          sudo apt-get -y install datefudge
 
       - name: Save decoded keystore
         id: save_decoded_keystore
@@ -57,7 +57,7 @@ jobs:
 
       - name: Publish
         run: >
-          faketime '2026-06-05 10:00:00'
+          datefudge -s '2026-06-05 10:00:00'
           dotnet publish 'src/ChronoRover.Android/ChronoRover.Android.csproj'
           -o 'binaries'
           -c 'Release'
