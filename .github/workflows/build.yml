@@ -75,8 +75,8 @@ jobs:
           -p:AndroidEnableProfiledAot=False
           -p:ContinuousIntegrationBuild=True
           -p:Deterministic=True
-          /p:BuildInParallel=False
-          /m:1
+          -p:AndroidUseAssemblyStore=False
+          -p:AndroidEnableAssemblyCompression=False
 
       - name: Prepare artifacts
         run: |
