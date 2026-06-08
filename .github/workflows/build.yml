@@ -57,7 +57,7 @@ jobs:
 
       - name: Publish
         run: >
-          datefudge -s '2026-06-05 10:00:00'
+          datefudge -s '$(git log -1 --pretty=format:%ct)'
           dotnet publish 'src/ChronoRover.Android/ChronoRover.Android.csproj'
           -o 'binaries'
           -c 'Release'
