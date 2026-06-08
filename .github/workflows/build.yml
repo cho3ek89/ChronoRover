@@ -57,7 +57,7 @@ jobs:
 
       - name: Publish
         run: >
-          datefudge -s '$(TZ=UTC git log -1 --pretty=format:%cd --date=format-local:'%Y-%m-%d %H:%M:%S')'
+          datefudge -s $(TZ=UTC git log -1 --pretty=format:%cd --date=format-local:'%Y-%m-%d %H:%M:%S')
           dotnet publish 'src/ChronoRover.Android/ChronoRover.Android.csproj'
           -o 'binaries'
           -c 'Release'
