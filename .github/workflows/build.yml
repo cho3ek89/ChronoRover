@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  version_code: 10003
-  version: 1.0.3
+  version_code: 10004
+  version: 1.0.4
 
 jobs:
   build_android:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
 
       - name: Setup .NET
         run: |
@@ -102,10 +102,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v5.2.0
+        uses: actions/setup-dotnet@v5.3.0
         with:
           dotnet-version: '10.0.108'
 
