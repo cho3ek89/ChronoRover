@@ -22,10 +22,10 @@ jobs:
         uses: actions/checkout@v6.0.3
 
       - name: Setup .NET
-        run: |
-          # https://github.com/cho3ek89/ChronoRover/issues/22
-          sudo apt-get update
-          sudo apt-get -y install dotnet-sdk-10.0
+        uses: actions/setup-dotnet@v5.3.0
+        with:
+          dotnet-version: '10.0.*'
+          workloads: android
 
       - name: Setup JDK
         uses: actions/setup-java@v5.2.0
@@ -33,20 +33,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup additional tools
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install datefudge
-
       - name: Save decoded keystore
         id: save_decoded_keystore
         uses: timheuer/base64-to-file@v2
         with:
           fileName: 'keystore.jks'
           encodedString: ${{ secrets.ANDROID_SIGNING_KEYSTORE_BASE64 }}
-
-      - name: Install Android Workload
-        run: dotnet workload restore 'src/ChronoRover.Android/ChronoRover.Android.csproj'
 
       - name: Run unit tests
         run: >
@@ -57,7 +49,6 @@ jobs:
 
       - name: Publish
         run: >
-          datefudge -s "$(TZ=UTC git log -1 --pretty=format:%cd --date=format-local:'%Y-%m-%d %H:%M:%S')"
           dotnet publish 'src/ChronoRover.Android/ChronoRover.Android.csproj'
           -o 'binaries'
           -c 'Release'
@@ -107,7 +98,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5.3.0
         with:
-          dotnet-version: '10.0.108'
+          dotnet-version: '10.0.*'
 
       - name: Run unit tests
         run: >
