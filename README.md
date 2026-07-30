@@ -7,6 +7,9 @@ Whether you’re a watch enthusiast, collector, or simply want the most accurate
 
 Perfect solution for Casio and Citizen owners who live beyond the range of any official time signal transmission station!
 
+## Privacy policy
+This application does not collect, process, store, or share any user data. It works entirely on your device.
+
 ## Attributions
 * [dotnet](https://github.com/dotnet/sdk) SDK 
 * [Avalonia](https://github.com/AvaloniaUI/avalonia/) framework, [SoundFlow](https://github.com/LSXPrime/SoundFlow), [ScottPlot](https://github.com/ScottPlot/ScottPlot), [GuerrillaNtp](https://github.com/robertvazan/guerrillantp), [NUnit](https://github.com/nunit/nunit), [moq](https://github.com/devlooped/moq) libraries
