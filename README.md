@@ -1,4 +1,18 @@
-# ChronoRover
+<hr>
+<p align="center"><img src="assets/icon.png" width="180" height="180"></p> 
+<h2 align="center"><b>ChronoRover</b></h2>
+<h4 align="center">Accurate time signal generator for radio-controlled watches.</h4>
+<p align="center">
+  <a href="https://apt.izzysoft.de/fdroid/index/apk/com.cho3ek89.ChronoRover"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" width="180" height="auto" /></a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/cho3ek89/ChronoRover?display_name=release">
+  <img src="https://img.shields.io/github/actions/workflow/status/cho3ek89/ChronoRover/.github%2Fworkflows%2Fbuild.yml?branch=master">
+  <img src="https://img.shields.io/github/license/cho3ek89/ChronoRover">
+</p>
+<hr>
+
+## Description
 ChronoRover is a precise time signal generator that emulates official long-wave time broadcasts to synchronize radio-controlled watches with atomic accuracy using your phone’s speaker or headphones.
 
 Among the currently supported signals are: DCF77 (Germany), MSF (United Kingdom), WWVB (United States), JJY (Japan), and BPC (China).
