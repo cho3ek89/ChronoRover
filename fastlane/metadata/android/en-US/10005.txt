@@ -1,0 +1,2 @@
+- Adjusting and enhancing the Android package build process.
+- Updating the dependencies.
