@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  version_code: 10005
-  version: 1.0.5
+  version_code: 10006
+  version: 1.0.6
 
 jobs:
   build_android:
