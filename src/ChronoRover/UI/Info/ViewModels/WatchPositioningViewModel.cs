@@ -37,14 +37,14 @@ public partial class WatchPositioningViewModel : ObservableObject
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public void SelectNextImage()
     {
-        SelectedImageIndex = +1;
+        SelectedImageIndex += 1;
     }
 
     [RelayCommand(CanExecute = nameof(CanSelectPreviousImage))]
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public void SelectPreviousImage()
     {
-        SelectedImageIndex = -1;
+        SelectedImageIndex -= 1;
     }
 
     private bool CanSelectNextImage() => SelectedImageIndex < Images.Count - 1;
