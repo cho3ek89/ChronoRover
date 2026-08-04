@@ -17,7 +17,7 @@ A clear and concise description of the bug and the expected fix.
 
 ### Environment
  - Operating system: [e.g. Windows, Linux, Android]
- - Version [e.g. 1.0.0]
+ - Version: [e.g. 1.0.0]
 
 ### Additional info
 If applicable, add some other info about the problem here.
