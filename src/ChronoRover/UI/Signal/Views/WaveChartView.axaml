@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="ChronoRover.UI.Signal.Views.WaveChartView">
 
-    <ctrl:AvaPlotExt x:Name="WavePlot" />
+    <ctrl:AvaPlotExt x:Name="WavePlot" Focusable="False" />
 
 </UserControl>

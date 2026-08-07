@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c="using:ChronoRover.UI.Converters"
+             xmlns:ctrl="using:ChronoRover.UI.Controls"
              xmlns:m="using:ChronoRover.UI.Settings.Models"
              xmlns:vm="using:ChronoRover.UI.Settings.ViewModels"
              mc:Ignorable="d"
@@ -12,20 +13,24 @@
         <TextBlock Text="Signal" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
+    <NavigationPage.BackButtonContent>
+        <StaticResource ResourceKey="NavPageBackButtonIcon" />
+    </NavigationPage.BackButtonContent>
+
     <ContentPage.Resources>
         <c:EnumToStringConverter x:Key="EnumToStrConv" />
     </ContentPage.Resources>
 
-    <ListBox ItemsSource="{Binding SignalTypes, Mode=OneTime}"
-             SelectedItem="{Binding SelectedSignalType, Mode=TwoWay}"
-             SelectionChanged="SignalTypeSelected"
-             Background="Transparent">
-        <ListBox.ItemsPanel>
+    <ctrl:ListBoxExt ItemsSource="{Binding SignalTypes, Mode=OneTime}"
+                     SelectedItem="{Binding SelectedSignalType, Mode=TwoWay}"
+                     SelectionChanged="SignalTypeSelected"
+                     Background="Transparent">
+        <ctrl:ListBoxExt.ItemsPanel>
             <ItemsPanelTemplate>
                 <StackPanel />
             </ItemsPanelTemplate>
-        </ListBox.ItemsPanel>
-        <ListBox.ItemTemplate>
+        </ctrl:ListBoxExt.ItemsPanel>
+        <ctrl:ListBoxExt.ItemTemplate>
             <DataTemplate x:DataType="m:SignalTypeListItem">
                 <StackPanel>
                     <TextBlock Text="{Binding SignalType, Converter={StaticResource EnumToStrConv}, Mode=OneWay}" />
@@ -37,7 +42,7 @@
                     </TextBlock>
                 </StackPanel>
             </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
+        </ctrl:ListBoxExt.ItemTemplate>
+    </ctrl:ListBoxExt>
 
 </ContentPage>

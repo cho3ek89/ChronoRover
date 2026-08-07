@@ -7,8 +7,12 @@
              x:DataType="vm:WatchPositioningViewModel"
              x:Class="ChronoRover.UI.Info.Views.WatchPositioningView">
     <ContentPage.Header>
-        <TextBlock Text="Positioning" Classes="CmdBarHeader" />
+        <TextBlock Text="Position" Classes="CmdBarHeader" />
     </ContentPage.Header>
+
+    <NavigationPage.BackButtonContent>
+        <StaticResource ResourceKey="NavPageBackButtonIcon" />
+    </NavigationPage.BackButtonContent>
 
     <Grid RowDefinitions="*, Auto" Margin="15,0">
         <Carousel Grid.Row="0"

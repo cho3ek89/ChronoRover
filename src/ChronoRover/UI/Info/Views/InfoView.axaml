@@ -8,6 +8,10 @@
         <TextBlock Text="Info" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
+    <NavigationPage.BackButtonContent>
+        <StaticResource ResourceKey="NavPageBackButtonIcon" />
+    </NavigationPage.BackButtonContent>
+
     <ContentPage.Styles>
         <Style Selector="ListBoxItem">
             <Setter Property="ContentTemplate">
@@ -25,8 +29,8 @@
     </ContentPage.Styles>
 
     <StackPanel HorizontalAlignment="Stretch">
-        <ListBoxItem Content="Manual" Tapped="ManualClick" />
-        <ListBoxItem Content="About" Tapped="AboutClick" />
+        <ListBoxItem Content="Manual" Tapped="ManualClick" KeyDown="ManualKeyDown" />
+        <ListBoxItem Content="About" Tapped="AboutClick" KeyDown="AboutKeyDown" />
     </StackPanel>
 
 </ContentPage>

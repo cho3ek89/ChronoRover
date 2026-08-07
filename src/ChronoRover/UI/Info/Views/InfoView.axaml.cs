@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Input;
 
 using ChronoRover.UI.Info.ViewModels;
 
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace ChronoRover.UI.Info.Views;
 
@@ -29,13 +31,29 @@ public partial class InfoView : ContentPage
 
     private async void ManualClick(object sender, RoutedEventArgs e)
     {
-        var view = _serviceProvider.GetRequiredService<ManualView>();
-        await Navigation!.PushAsync(view);
+        await NavigateToView<ManualView>();
+    }
+
+    private async void ManualKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter)
+            await NavigateToView<ManualView>();
     }
 
     private async void AboutClick(object sender, RoutedEventArgs e)
     {
-        var view = _serviceProvider.GetRequiredService<AboutView>();
+        await NavigateToView<AboutView>();
+    }
+
+    private async void AboutKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter)
+            await NavigateToView<AboutView>();
+    }
+
+    private async Task NavigateToView<T>() where T : ContentPage
+    {
+        var view = _serviceProvider.GetRequiredService<T>();
         await Navigation!.PushAsync(view);
     }
 }

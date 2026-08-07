@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="ChronoRover.UI.Signal.Views.SpectrumChartView">
 
-    <ctrl:AvaPlotExt x:Name="SpecPlot" />
+    <ctrl:AvaPlotExt x:Name="SpecPlot" Focusable="False" />
 
 </UserControl>
