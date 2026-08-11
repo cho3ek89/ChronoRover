@@ -49,7 +49,7 @@ public partial class SpectrumChartView : UserControl, IDisposable
                 _ => UpdateBars(),
                 null,
                 TimeSpan.Zero,
-                TimeSpan.FromMilliseconds(1000f / 60));
+                TimeSpan.FromMilliseconds(1000f / 40));
 
             void UpdateBars()
             {

@@ -48,7 +48,7 @@ public partial class WaveChartView : UserControl, IDisposable
                 _ => WavePlot.Refresh(),
                 null,
                 TimeSpan.Zero,
-                TimeSpan.FromMilliseconds(1000f / 60));
+                TimeSpan.FromMilliseconds(1000f / 50));
         }
 
         base.OnDataContextChanged(e);
