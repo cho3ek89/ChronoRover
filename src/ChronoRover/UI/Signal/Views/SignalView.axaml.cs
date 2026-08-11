@@ -1,4 +1,6 @@
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 
 using ChronoRover.UI.Info.Views;
@@ -39,5 +41,21 @@ public partial class SignalView : ContentPage
     {
         var view = _serviceProvider.GetRequiredService<InfoView>();
         await Navigation!.PushAsync(view);
+    }
+
+    private void PlayButtonPropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
+    {
+        if (e.Property != IsEffectivelyEnabledProperty)
+            return;
+
+        var isPlayEnabled = (bool)e.NewValue!;
+
+        XYFocus.SetDown(
+            SignalTypeSelectButton,
+            isPlayEnabled ? PlayButton : StopButton);
+
+        XYFocus.SetDown(
+            InfoButton,
+            isPlayEnabled ? PlayButton : StopButton);
     }
 }

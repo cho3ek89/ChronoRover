@@ -9,6 +9,7 @@
 
     <NavigationPage x:Name="Navigator"
                     BarHeight="60"
-                    HasShadow="True" />
+                    HasShadow="True"
+                    XYFocus.NavigationModes="Enabled" />
 
 </UserControl>

@@ -23,6 +23,13 @@
                 <GradientStop Color="#FF121212" Offset="0.72" />
                 <GradientStop Color="#FF0A0A0A" Offset="1.00" />
             </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientFocusAdoner" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FF808080" Offset="0.00" />
+                <GradientStop Color="#FF747474" Offset="0.18" />
+                <GradientStop Color="#FF666666" Offset="0.48" />
+                <GradientStop Color="#FF585858" Offset="0.72" />
+                <GradientStop Color="#FF4A4A4A" Offset="1.00" />
+            </LinearGradientBrush>
 
             <Color x:Key="Color1">#FFD6DBE3</Color>
 
@@ -53,6 +60,13 @@
                 <GradientStop Color="#FFCAD1DB" Offset="0.48" />
                 <GradientStop Color="#FFBCC4D0" Offset="0.72" />
                 <GradientStop Color="#FFAEB8C6" Offset="1.00" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DefaultGradientFocusAdoner" StartPoint="0%, 0%" EndPoint="0%, 100%">
+                <GradientStop Color="#FFB8C1CD" Offset="0.00" />
+                <GradientStop Color="#FFADB7C4" Offset="0.18" />
+                <GradientStop Color="#FF9FAAB9" Offset="0.48" />
+                <GradientStop Color="#FF909CAB" Offset="0.72" />
+                <GradientStop Color="#FF818E9E" Offset="1.00" />
             </LinearGradientBrush>
 
             <Color x:Key="Color1">#FF1F1F1F</Color>

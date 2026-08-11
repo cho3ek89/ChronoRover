@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:c="using:ChronoRover.UI.Converters"
              xmlns:vm="using:ChronoRover.UI.Dialogs.ViewModels"
              mc:Ignorable="d"
              x:DataType="vm:ErrorViewModel"
@@ -11,31 +10,42 @@
         <TextBlock Text="Error" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
-    <ContentPage.Resources>
-        <c:ExceptionToStringConverter x:Key="ExToStrConv" />
-    </ContentPage.Resources>
+    <NavigationPage.BackButtonContent>
+        <StaticResource ResourceKey="NavPageBackButtonIcon" />
+    </NavigationPage.BackButtonContent>
 
     <ContentPage.Styles>
-        <Style Selector="TextBox">
-            <Setter Property="TextWrapping" Value="Wrap" />
-            <Setter Property="IsReadOnly" Value="True" />
-            <Setter Property="AcceptsReturn" Value="False" />
-            <Setter Property="AcceptsTab" Value="True" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Focusable" Value="False" />
+        <Style Selector="StackPanel > StackPanel">
+            <Setter Property="Spacing" Value="10" />
         </Style>
     </ContentPage.Styles>
 
     <ScrollViewer>
-        <StackPanel Margin="15,0" Spacing="3" MinHeight="300">
+        <StackPanel Margin="15,0" Spacing="15" MinHeight="300">
 
-            <TextBlock Classes="heading" Text="Error:" />
+            <StackPanel>
+                <TextBlock Classes="heading focusable"
+                           Text="Error:" />
+                <SelectableTextBlock Classes="text focusable"
+                                     xml:space="preserve"
+                                     Text="{Binding Title, Mode=OneWay}" />
+            </StackPanel>
 
-            <TextBox Text="{Binding Title, Mode=OneWay}" />
+            <StackPanel>
+                <TextBlock Classes="heading focusable"
+                           Text="Message:" />
+                <SelectableTextBlock Classes="text focusable"
+                                     xml:space="preserve"
+                                     Text="{Binding Exception.Message, Mode=OneWay}" />
+            </StackPanel>
 
-            <TextBlock Classes="heading" Text="Details:" />
-
-            <TextBox Text="{Binding Exception, Mode=OneWay, Converter={StaticResource ExToStrConv}}" />
+            <StackPanel>
+                <TextBlock Classes="heading focusable"
+                           Text="Stack trace:" />
+                <SelectableTextBlock Classes="text focusable"
+                                     xml:space="preserve"
+                                     Text="{Binding Exception.StackTrace, Mode=OneWay}" />
+            </StackPanel>
 
         </StackPanel>
     </ScrollViewer>
