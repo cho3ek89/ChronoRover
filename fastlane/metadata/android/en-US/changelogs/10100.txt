@@ -1,0 +1,4 @@
+- Adding the possibility of navigating through the application using keyboard arrows or a D-pad.
+- Adding support for TVs.
+- Improving chart drawing performance.
+- Adding support for 32-bit (armeabi-v7a) APKs.

@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  version_code: 10006
-  version: 1.0.6
+  version_code: 10100
+  version: 1.1.0
 
 jobs:
   build_android:
@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        runtime: [android-arm64]
+        runtime: [android-arm, android-arm64]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
