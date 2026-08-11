@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
-	<application android:label="@string/app_name"
-	             android:theme="@style/MyTheme.NoActionBar"
-	             android:icon="@mipmap/ic_launcher"
-	             android:roundIcon="@mipmap/ic_launcher"/>
-	<uses-permission android:name="android.permission.INTERNET" />
+    <application android:label="@string/app_name"
+                 android:theme="@style/MyTheme.NoActionBar"
+                 android:icon="@mipmap/ic_launcher"
+                 android:roundIcon="@mipmap/ic_launcher"
+                 android:banner="@drawable/tv_banner"/>
+	
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+	<uses-feature android:name="android.hardware.touchscreen" 
+				  android:required="false" />
+
+	<uses-feature android:name="android.software.leanback"
+				  android:required="false" />
 </manifest>
