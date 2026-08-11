@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        runtime: [android-arm64]
+        runtime: [android-arm, android-arm64]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
