@@ -28,15 +28,3 @@ This application does not collect, process, store, or share any user data. It wo
 * [dotnet](https://github.com/dotnet/sdk) SDK 
 * [Avalonia](https://github.com/AvaloniaUI/avalonia/) framework, [SoundFlow](https://github.com/LSXPrime/SoundFlow), [ScottPlot](https://github.com/ScottPlot/ScottPlot), [GuerrillaNtp](https://github.com/robertvazan/guerrillantp), [NUnit](https://github.com/nunit/nunit), [moq](https://github.com/devlooped/moq) libraries
 * [Exo 2](https://fonts.google.com/specimen/Exo+2), [G7 Cube 5](https://www.dafont.com/g7-cube-5.font) fonts, [SVG Repo](https://www.svgrepo.com/) icons
-
-## Contributions
-Want to share design or feature suggestions, or report an issue? \
-Feel free to do so!
-
-#### Conventions
-Commit messages should preferably be in the following format: _#ISSUE_NUMBER ISSUE_TITLE_ (i.e. _#1 Issue title_). \
-Additional message (if applicable) can be put in the 2nd line. \
-Squashing commits in the end of work will be more than appreciated.
-
-Feature and bugfix branches should be named in the following format: _feature/ISSUE_NUMBER-ISSUE_TITLE_ (i.e. _feature/1-issue-title_, _bugfix/2-issue-title_). \
-Release branches and tags should be named in the following format: _release/VERSION_ (i.e. _release/1.0.0_).
