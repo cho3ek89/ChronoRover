@@ -1,0 +1,2 @@
+- Refining the main screen layout.
+- Updating the dependencies.
