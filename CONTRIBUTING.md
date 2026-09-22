@@ -19,7 +19,7 @@ The description can be left empty.
 
 ### Commit messages
 Squashed commit messages should be in the following format:\
-`#ISSUE_NUMBER ISSUE_TITLE` (e.g. **#1 Do this and that**)
+`#ISSUE_NUMBER ISSUE_TITLE` (e.g. **#1 Do this and that** or **#2 Fix this and that**)
 
 Additional message (if applicable) can be put in the 2nd line.
 
