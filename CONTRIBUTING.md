@@ -25,7 +25,7 @@ Additional message (if applicable) can be put in the 2nd line.
 
 ### Branches and tags
 Feature and bugfix branches should preferably be named in the following format:\
-`feature/ISSUE_NUMBER-ISSUE_TITLE` (e.g. **feature/1-Do-this-and-that** or **bugfix/2-Fix_this_and_that**)
+`feature/ISSUE_NUMBER-ISSUE_TITLE` (e.g. **feature/1-Do-this-and-that** or **bugfix/2-Fix-this-and-that**)
 
 Release branches and release tags should be named in the following format:\
 `release/VERSION` (e.g. **release/1.0.0**).
