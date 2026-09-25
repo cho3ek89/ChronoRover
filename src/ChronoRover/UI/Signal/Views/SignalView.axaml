@@ -9,9 +9,14 @@
              x:Class="ChronoRover.UI.Signal.Views.SignalView">
     <ContentPage.Header>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Chrono" Classes="CmdBarHeader" />
-            <TextBlock Text="Rover" Classes="CmdBarHeader"
-                       FontFamily="{StaticResource Exo2Bold}" />
+            <TextBlock Classes="CmdBarHeader"
+                       Text="Chrono"
+                       FontFamily="{StaticResource OrbitronMedium}"
+                       LetterSpacing="0" />
+            <TextBlock Classes="CmdBarHeader"
+                       Text="Rover"
+                       FontFamily="{StaticResource Exo2Bold}"
+                       LetterSpacing="0" />
         </StackPanel>
     </ContentPage.Header>
 
