@@ -13,6 +13,7 @@ using ChronoRover.UI.Dialogs.ViewModels;
 using ChronoRover.UI.Dialogs.Views;
 using ChronoRover.UI.Info.ViewModels;
 using ChronoRover.UI.Info.Views;
+using ChronoRover.UI.Localization;
 using ChronoRover.UI.Models.Messages;
 using ChronoRover.UI.Settings.ViewModels;
 using ChronoRover.UI.Settings.Views;
@@ -26,6 +27,7 @@ using CommunityToolkit.Mvvm.Messaging;
 using GuerrillaNtp;
 
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
 using SoundFlow.Abstracts;
@@ -40,6 +42,11 @@ public class App : Application
 {
     public override void Initialize()
     {
+        // For localization testing.
+        // var culture = new System.Globalization.CultureInfo("pl-PL");
+        // System.Globalization.CultureInfo.CurrentCulture = culture;
+        // System.Globalization.CultureInfo.CurrentUICulture = culture;
+
         AvaloniaXamlLoader.Load(this);
     }
 
@@ -50,6 +57,9 @@ public class App : Application
         RegisterViewModels(serviceCollection);
         RegisterViews(serviceCollection);
         var services = serviceCollection.BuildServiceProvider();
+
+        var stringLocalizer = services.GetRequiredService<IStringLocalizer<App>>();
+        Localizer<App>.Initialize(stringLocalizer);
 
         ConfigureExceptionHandling(services);
 
@@ -126,6 +136,8 @@ public class App : Application
                 options.SingleLine = true;
             });
         });
+
+        services.AddLocalization(options => options.ResourcesPath = "UI/Localization");
 
         services.AddSingleton<IMessenger, WeakReferenceMessenger>();
 
