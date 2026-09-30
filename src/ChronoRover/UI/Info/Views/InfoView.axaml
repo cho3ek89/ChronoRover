@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:e="using:ChronoRover.UI.Extensions"
              mc:Ignorable="d"
              x:Class="ChronoRover.UI.Info.Views.InfoView">
     <ContentPage.Header>
-        <TextBlock Text="Info" Classes="CmdBarHeader" />
+        <TextBlock Text="{e:Localization Info}" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
     <NavigationPage.BackButtonContent>
@@ -29,8 +30,8 @@
     </ContentPage.Styles>
 
     <StackPanel HorizontalAlignment="Stretch">
-        <ListBoxItem Content="Manual" Tapped="ManualClick" KeyDown="ManualKeyDown" />
-        <ListBoxItem Content="About" Tapped="AboutClick" KeyDown="AboutKeyDown" />
+        <ListBoxItem Content="{e:Localization Manual}" Tapped="ManualClick" KeyDown="ManualKeyDown" />
+        <ListBoxItem Content="{e:Localization About}" Tapped="AboutClick" KeyDown="AboutKeyDown" />
     </StackPanel>
 
 </ContentPage>
