@@ -29,3 +29,16 @@ Feature and bugfix branches should preferably be named in the following format:\
 
 Release branches and release tags should be named in the following format:\
 `release/VERSION` (e.g. **release/1.0.0**).
+
+
+## Localization
+
+Translated strings are stored in _resx_ files inside following directory:\
+`/src/ChronoRover/UI/Localization`
+
+Only the UI should be localized. Do not translate any log messages.
+
+Always make sure the UI controls have enough room to display translated strings!
+
+When a new translation is introduced, add the _short_description.txt_ and _long_description.txt_ descriptions to the _fastlane_ directory.\
+Do not translate change-logs.
