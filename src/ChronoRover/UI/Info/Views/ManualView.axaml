@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:e="using:ChronoRover.UI.Extensions"
              mc:Ignorable="d"
              x:Class="ChronoRover.UI.Info.Views.ManualView">
     <ContentPage.Header>
-        <TextBlock Text="Manual" Classes="CmdBarHeader" />
+        <TextBlock Text="{e:Localization Manual}" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
     <NavigationPage.BackButtonContent>
@@ -15,7 +16,7 @@
     <NavigationPage.TopCommandBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <CommandBarButton Label="Position" Click="WatchPositioningPicturesClick">
+                <CommandBarButton Label="{e:Localization Position}" Click="WatchPositioningPicturesClick">
                     <CommandBarButton.Icon>
                         <PathIcon Data="M256.996,208.82l-9.4,9.4l-28.2-28.2c-8.4-8.4-20.9-8.4-29.2,0c-8.4,8.4-8.4,20.9,0,29.2l41.8,41.8c10.7,10.7,21.4,9.9,30.3,1l24-24c8.4-8.4,8.4-20.9,0-29.2C277.896,200.42,265.296,200.42,256.996,208.82z
 M486.796,357.12l-77.6-110.2c0-41.7-15.9-83.5-47.8-115.4c-30-31.1-70.4-47.8-113.8-48l0,0l-112.8-79.4c-8.4-6.3-18.8-5.2-26.1,2.1l-102.4,102.3c-7.3,7.3-7.3,17.8-2.1,26.1c0,0,79.6,113,79.7,113.2c0.4,41.1,16.4,82.1,47.8,113.5c30.3,31.3,71,48.1,114.9,48.1c0.3,0,110.7,77.3,110.7,77.3c10.1,8.6,21.9,2.1,25.1-1l102.4-102.4C491.996,375.92,491.996,365.52,486.796,357.12z
@@ -43,108 +44,107 @@ M366.696,443.82l-63.2-44.5c21.6-8,41.4-20.8,58-38c17.3-17,29.8-36.9,37.7-58.3l44
     <ScrollViewer>
         <StackPanel Spacing="15" Margin="15,0">
             <TextBlock Classes="heading focusable caution"
-                       Text="Caution" />
+                       Text="{e:Localization Manual.Caution.Header}" />
             <TextBlock Classes="title focusable caution"
-                       Text="This application generates loud, high-pitched noises that may cause discomfort or potential hearing damage! Leave the room while transmission is active." />
+                       Text="{e:Localization Manual.Caution.P01}" />
 
 
             <TextBlock Classes="heading focusable"
-                       Text="Synchronisation" />
+                       Text="{e:Localization Manual.Synchronisation.Header}" />
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                   ColumnDefinitions="Auto,*">
                 <TextBlock Grid.Row="00" Grid.Column="0" Classes="title"
                            Text="1." />
                 <TextBlock Grid.Row="00" Grid.Column="1" Classes="title focusable"
-                           Text="Configure settings if needed" />
+                           Text="{e:Localization Manual.Synchronisation.P01}" />
                 <TextBlock Grid.Row="01" Grid.Column="1" Classes="text focusable"
-                           Text="Select the correct signal type (e.g. DCF77)." />
+                           Text="{e:Localization Manual.Synchronisation.P02}" />
 
                 <TextBlock Grid.Row="02" Grid.Column="0" Classes="title"
                            Text="2." />
                 <TextBlock Grid.Row="02" Grid.Column="1" Classes="title focusable"
-                           Text="Set volume" />
+                           Text="{e:Localization Manual.Synchronisation.P03}" />
                 <TextBlock Grid.Row="03" Grid.Column="1" Classes="text focusable"
-                           Text="Adjust your device volume to 80–100%." />
+                           Text="{e:Localization Manual.Synchronisation.P04}" />
 
                 <TextBlock Grid.Row="04" Grid.Column="0" Classes="title"
                            Text="3." />
                 <TextBlock Grid.Row="04" Grid.Column="1" Classes="title focusable"
-                           Text="Activate RC mode" />
+                           Text="{e:Localization Manual.Synchronisation.P05}" />
                 <TextBlock Grid.Row="05" Grid.Column="1" Classes="text focusable"
-                           Text="Manually turn on the wave reception mode on your watch, per its manual." />
+                           Text="{e:Localization Manual.Synchronisation.P06}" />
 
                 <TextBlock Grid.Row="06" Grid.Column="0" Classes="title"
                            Text="4." />
                 <TextBlock Grid.Row="06" Grid.Column="1" Classes="title focusable"
-                           Text="Position the watch" />
+                           Text="{e:Localization Manual.Synchronisation.P07}" />
                 <TextBlock Grid.Row="07" Grid.Column="1" Classes="text focusable">
-                    <Run
-                        Text="Place it immediately adjacent to an external speaker or connected headphones for best results. The built-in speaker is an alternative, though far less reliable due to lower power." />
+                    <Run Text="{e:Localization Manual.Synchronisation.P08}" />
                     <LineBreak />
-                    <Run Text="Not clear enough? Click the" />
-                    <Run Text="Position" TextDecorations="Underline" />
-                    <Run Text="button above to see images of the correct watch position." />
+                    <Run Text="{e:Localization Manual.Synchronisation.P09}" />
+                    <Run Text="{e:Localization Position}" TextDecorations="Underline" />
+                    <Run Text="{e:Localization Manual.Synchronisation.P10}" />
                 </TextBlock>
 
                 <TextBlock Grid.Row="08" Grid.Column="0" Classes="title"
                            Text="5." />
                 <TextBlock Grid.Row="08" Grid.Column="1" Classes="title focusable"
-                           Text="Start transmission" />
+                           Text="{e:Localization Manual.Synchronisation.P11}" />
                 <TextBlock Grid.Row="09" Grid.Column="1" Classes="text focusable"
-                           Text="Tap Play." />
+                           Text="{e:Localization Manual.Synchronisation.P12}" />
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Classes="title"
                            Text="6." />
                 <TextBlock Grid.Row="10" Grid.Column="1" Classes="title focusable"
-                           Text="Wait" />
+                           Text="{e:Localization Manual.Synchronisation.P13}" />
                 <TextBlock Grid.Row="11" Grid.Column="1" Classes="text focusable"
-                           Text="Wait 3–7 minutes for synchronisation completeness." />
+                           Text="{e:Localization Manual.Synchronisation.P14}" />
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Classes="title"
                            Text="7." />
                 <TextBlock Grid.Row="12" Grid.Column="1" Classes="title focusable"
-                           Text="Stop transmission" />
+                           Text="{e:Localization Manual.Synchronisation.P15}" />
                 <TextBlock Grid.Row="13" Grid.Column="1" Classes="text focusable"
-                           Text="Upon sync completion, press the Stop button." />
+                           Text="{e:Localization Manual.Synchronisation.P16}" />
             </Grid>
 
 
             <TextBlock Classes="heading focusable"
-                       Text="Troubleshooting" />
+                       Text="{e:Localization Manual.Troubleshooting.Header}" />
             <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                   ColumnDefinitions="Auto, *">
                 <TextBlock Grid.Row="00" Grid.Column="0" Classes="title"
                            Text="-" />
                 <TextBlock Grid.Row="00" Grid.Column="1" Classes="title focusable"
-                           Text="Wrong signal type" />
+                           Text="{e:Localization Manual.Troubleshooting.P01}" />
                 <TextBlock Grid.Row="01" Grid.Column="1" Classes="text focusable">
-                    <Run Text="Confirm the selected signal type aligns with your watch's capabilities." />
+                    <Run Text="{e:Localization Manual.Troubleshooting.P02}" />
                     <LineBreak />
-                    <Run Text="On some watches (like Casio or Citizen), the receivable signal type depends on the set home city. For example, if your watch's home city is set to BER, choose DCF77." />
+                    <Run Text="{e:Localization Manual.Troubleshooting.P03}" />
                 </TextBlock>
 
                 <TextBlock Grid.Row="02" Grid.Column="0" Classes="title"
                            Text="-" />
                 <TextBlock Grid.Row="02" Grid.Column="1" Classes="title focusable"
-                           Text="Insufficient signal power" />
+                           Text="{e:Localization Manual.Troubleshooting.P04}" />
                 <TextBlock Grid.Row="03" Grid.Column="1" Classes="text focusable"
-                           Text="Make sure the volume is high enough. Keep the watch as close to the speaker as possible. Try using external speaker or a headset if you are not, if you are try different one." />
+                           Text="{e:Localization Manual.Troubleshooting.P05}" />
 
                 <TextBlock Grid.Row="04" Grid.Column="0" Classes="title"
                            Text="-" />
                 <TextBlock Grid.Row="04" Grid.Column="1" Classes="title focusable"
-                           Text="Signal interferences" />
+                           Text="{e:Localization Manual.Troubleshooting.P06}" />
                 <TextBlock Grid.Row="05" Grid.Column="1" Classes="text focusable"
-                           Text="Background noise, music, or other sounds may interfere with the time signal and cause synchronization to fail. For optimal results, use the application in a quiet room." />
+                           Text="{e:Localization Manual.Troubleshooting.P07}" />
 
                 <TextBlock Grid.Row="06" Grid.Column="0" Classes="title"
                            Text="-" />
                 <TextBlock Grid.Row="06" Grid.Column="1" Classes="title focusable"
-                           Text="Watch is slow after synchronization" />
+                           Text="{e:Localization Manual.Troubleshooting.P08}" />
                 <TextBlock Grid.Row="07" Grid.Column="1" Classes="text focusable">
-                    <Run Text="Your watch may be a few hundred milliseconds slow after synchronization. This can occasionally be caused by the headset you are using. Try another one!" />
+                    <Run Text="{e:Localization Manual.Troubleshooting.P09}" />
                     <LineBreak />
-                    <Run Text="During our testing, the simplest and cheapest cable models delivered the best (and perfect) accuracy." />
+                    <Run Text="{e:Localization Manual.Troubleshooting.P10}" />
                 </TextBlock>
             </Grid>
         </StackPanel>
