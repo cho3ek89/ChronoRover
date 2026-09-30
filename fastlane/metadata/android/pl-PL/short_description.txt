@@ -1,0 +1,1 @@
+Precyzyjny generator sygnału czasu dla zegarków sterowanych radiowo.
