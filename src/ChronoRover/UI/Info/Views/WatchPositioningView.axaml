@@ -2,12 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:e="using:ChronoRover.UI.Extensions"
              xmlns:vm="using:ChronoRover.UI.Info.ViewModels"
              mc:Ignorable="d"
              x:DataType="vm:WatchPositioningViewModel"
              x:Class="ChronoRover.UI.Info.Views.WatchPositioningView">
     <ContentPage.Header>
-        <TextBlock Text="Position" Classes="CmdBarHeader" />
+        <TextBlock Text="{e:Localization Position}" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
     <NavigationPage.BackButtonContent>
