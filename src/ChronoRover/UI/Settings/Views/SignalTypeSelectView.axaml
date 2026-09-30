@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c="using:ChronoRover.UI.Converters"
              xmlns:ctrl="using:ChronoRover.UI.Controls"
+             xmlns:e="using:ChronoRover.UI.Extensions"
              xmlns:m="using:ChronoRover.UI.Settings.Models"
              xmlns:vm="using:ChronoRover.UI.Settings.ViewModels"
              mc:Ignorable="d"
              x:Class="ChronoRover.UI.Settings.Views.SignalTypeSelectView"
              x:DataType="vm:SignalTypeSelectViewModel">
     <ContentPage.Header>
-        <TextBlock Text="Signal" Classes="CmdBarHeader" />
+        <TextBlock Text="{e:Localization Signal}" Classes="CmdBarHeader" />
     </ContentPage.Header>
 
     <NavigationPage.BackButtonContent>
