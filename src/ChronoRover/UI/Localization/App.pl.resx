@@ -1,0 +1,191 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Signal" xml:space="preserve">
+        <value>Sygnał</value>
+    </data>
+    <data name="Country.USA" xml:space="preserve">
+        <value>USA</value>
+    </data>
+    <data name="Country.Germany" xml:space="preserve">
+        <value>Niemcy</value>
+    </data>
+    <data name="Country.Japan" xml:space="preserve">
+        <value>Japonia</value>
+    </data>
+    <data name="Country.China" xml:space="preserve">
+        <value>Chiny</value>
+    </data>
+    <data name="Country.UnitedKingdom" xml:space="preserve">
+        <value>Zjednoczone Królestwo</value>
+    </data>
+    <data name="City.Mainflingen" xml:space="preserve">
+        <value>Mainflingen</value>
+    </data>
+    <data name="City.FortCollins" xml:space="preserve">
+        <value>Fort Collins</value>
+    </data>
+    <data name="City.TamuraSaga" xml:space="preserve">
+        <value>Tamura/Saga</value>
+    </data>
+    <data name="Info" xml:space="preserve">
+        <value>Info</value>
+    </data>
+    <data name="City.Shangqiu" xml:space="preserve">
+        <value>Shangqiu</value>
+    </data>
+    <data name="City.Anthorn" xml:space="preserve">
+        <value>Anthorn</value>
+    </data>
+    <data name="Manual" xml:space="preserve">
+        <value>Instrukcja</value>
+    </data>
+    <data name="About" xml:space="preserve">
+        <value>O programie</value>
+    </data>
+    <data name="GitHub" xml:space="preserve">
+        <value>GitHub</value>
+    </data>
+    <data name="About.Description.Header" xml:space="preserve">
+        <value>ChronoRover</value>
+    </data>
+    <data name="About.Description.P01" xml:space="preserve">
+        <value>ChronoRover to precyzyjny generator sygnału czasu, który emuluje oficjalne transmisje sygnału czasu nadawane na falach długich, umożliwiając synchronizację zegarków sterowanych radiowo z dokładnością zegara atomowego za pomocą głośnika telefonu lub słuchawek.</value>
+    </data>
+    <data name="About.Description.P02" xml:space="preserve">
+        <value>Obecnie obsługiwane są następujące sygnały: DCF77 (Niemcy), MSF (Wielka Brytania), WWVB (Stany Zjednoczone), JJY (Japonia) oraz BPC (Chiny).</value>
+    </data>
+    <data name="About.Description.P03" xml:space="preserve">
+        <value>Niezależnie od tego, czy jesteś miłośnikiem zegarków, kolekcjonerem, czy po prostu zależy Ci na możliwie najdokładniejszym czasie, ChronoRover zamienia Twój smartfon w przenośny nadajnik sygnału czasu.</value>
+    </data>
+    <data name="About.Description.P04" xml:space="preserve">
+        <value>Idealne rozwiązanie dla właścicieli zegarków Casio i Citizen mieszkających poza zasięgiem oficjalnych nadajników sygnału czasu!</value>
+    </data>
+    <data name="About.Contributions.Header" xml:space="preserve">
+        <value>Wkład</value>
+    </data>
+    <data name="About.Contributions.P01" xml:space="preserve">
+        <value>Chcesz przejrzeć kod źródłowy, podzielić się sugestiami dotyczącymi wyglądu lub funkcji albo zgłosić problem? Kliknij przycisk</value>
+    </data>
+    <data name="About.Contributions.P02" xml:space="preserve">
+        <value>powyżej, aby otworzyć nasze repozytorium.</value>
+    </data>
+    <data name="Position" xml:space="preserve">
+        <value>Pozycja</value>
+    </data>
+    <data name="Manual.Caution.Header" xml:space="preserve">
+        <value>Uwaga</value>
+    </data>
+    <data name="Manual.Caution.P01" xml:space="preserve">
+        <value>Ta aplikacja generuje głośne dźwięki o wysokich częstotliwościach, które mogą powodować dyskomfort lub potencjalnie uszkodzić słuch! Opuść pomieszczenie na czas transmisji.</value>
+    </data>
+    <data name="Manual.Synchronisation.Header" xml:space="preserve">
+        <value>Synchronizacja</value>
+    </data>
+    <data name="Manual.Synchronisation.P01" xml:space="preserve">
+        <value>Zmień ustawienia w razie potrzeby</value>
+    </data>
+    <data name="Manual.Synchronisation.P02" xml:space="preserve">
+        <value>Wybierz odpowiedni typ sygnału (np. DCF77).</value>
+    </data>
+    <data name="Manual.Synchronisation.P03" xml:space="preserve">
+        <value>Ustaw głośność</value>
+    </data>
+    <data name="Manual.Synchronisation.P04" xml:space="preserve">
+        <value>Ustaw głośność urządzenia na poziomie 80–100%.</value>
+    </data>
+    <data name="Manual.Synchronisation.P05" xml:space="preserve">
+        <value>Włącz tryb RC</value>
+    </data>
+    <data name="Manual.Synchronisation.P06" xml:space="preserve">
+        <value>Ręcznie włącz w zegarku tryb odbioru sygnału radiowego, zgodnie z instrukcją obsługi zegarka.</value>
+    </data>
+    <data name="Manual.Synchronisation.P07" xml:space="preserve">
+        <value>Umieść zegarek we właściwej pozycji</value>
+    </data>
+    <data name="Manual.Synchronisation.P08" xml:space="preserve">
+        <value>Umieść zegarek bezpośrednio obok zewnętrznego głośnika lub podłączonych słuchawek, aby uzyskać najlepsze rezultaty. Możesz również użyć wbudowanego głośnika, jednak ze względu na jego niższą moc rozwiązanie to jest znacznie bardziej zawodne.</value>
+    </data>
+    <data name="Manual.Synchronisation.P09" xml:space="preserve">
+        <value>Coś jest niejasne? Kliknij przycisk</value>
+    </data>
+    <data name="Manual.Synchronisation.P10" xml:space="preserve">
+        <value>powyżej, aby zobaczyć ilustracje przedstawiające prawidłowe umiejscowienie zegarka.</value>
+    </data>
+    <data name="Manual.Synchronisation.P11" xml:space="preserve">
+        <value>Rozpocznij transmisję</value>
+    </data>
+    <data name="Manual.Synchronisation.P12" xml:space="preserve">
+        <value>Naciśnij przycisk Play.</value>
+    </data>
+    <data name="Manual.Synchronisation.P13" xml:space="preserve">
+        <value>Zaczekaj</value>
+    </data>
+    <data name="Manual.Synchronisation.P14" xml:space="preserve">
+        <value>Zaczekaj 3–7 minut na zakończenie synchronizacji.</value>
+    </data>
+    <data name="Manual.Synchronisation.P15" xml:space="preserve">
+        <value>Zatrzymaj transmisję</value>
+    </data>
+    <data name="Manual.Synchronisation.P16" xml:space="preserve">
+        <value>Po zakończeniu synchronizacji naciśnij przycisk Stop.</value>
+    </data>
+    <data name="Manual.Troubleshooting.Header" xml:space="preserve">
+        <value>Rozwiązywanie problemów</value>
+    </data>
+    <data name="Manual.Troubleshooting.P01" xml:space="preserve">
+        <value>Nieprawidłowy typ sygnału</value>
+    </data>
+    <data name="Manual.Troubleshooting.P02" xml:space="preserve">
+        <value>Upewnij się, że wybrany typ sygnału jest zgodny z możliwościami Twojego zegarka.</value>
+    </data>
+    <data name="Manual.Troubleshooting.P03" xml:space="preserve">
+        <value>W niektórych zegarkach (np. Casio lub Citizen) rodzaj odbieranego sygnału zależy od ustawionego miasta macierzystego. Na przykład, jeśli jako miasto macierzyste ustawiono BER, wybierz sygnał DCF77.</value>
+    </data>
+    <data name="Manual.Troubleshooting.P04" xml:space="preserve">
+        <value>Zbyt słaby sygnał</value>
+    </data>
+    <data name="Manual.Troubleshooting.P05" xml:space="preserve">
+        <value>Upewnij się, że głośność jest wystarczająco wysoka. Umieść zegarek jak najbliżej głośnika. Jeśli korzystasz z wbudowanego głośnika, spróbuj użyć zewnętrznego głośnika lub słuchawek. Jeśli już z nich korzystasz, spróbuj użyć innych.</value>
+    </data>
+    <data name="Manual.Troubleshooting.P06" xml:space="preserve">
+        <value>Zakłócenia sygnału</value>
+    </data>
+    <data name="Manual.Troubleshooting.P07" xml:space="preserve">
+        <value>Hałas w tle, muzyka lub inne dźwięki mogą zakłócać sygnał czasu i uniemożliwić synchronizację. Aby uzyskać najlepsze rezultaty, korzystaj z aplikacji w cichym pomieszczeniu.</value>
+    </data>
+    <data name="Manual.Troubleshooting.P08" xml:space="preserve">
+        <value>Zegarek się spóźnia po synchronizacji</value>
+    </data>
+    <data name="Manual.Troubleshooting.P09" xml:space="preserve">
+        <value>Po synchronizacji zegarek może spóźniać się o kilkaset milisekund. Przyczyną może być używany zestaw słuchawkowy. Spróbuj użyć innego!</value>
+    </data>
+    <data name="Manual.Troubleshooting.P10" xml:space="preserve">
+        <value>Podczas naszych testów najprostsze i najtańsze modele słuchawek przewodowych zapewniały najlepszą (a nawet idealną) dokładność.</value>
+    </data>
+    <data name="Message.SignalGenerationStartError" xml:space="preserve">
+        <value>Wystąpił błąd podczas uruchamiania generowania sygnału.</value>
+    </data>
+    <data name="Message.SignalGenerationStopError" xml:space="preserve">
+        <value>Wystąpił błąd podczas zatrzymywania generowania sygnału.</value>
+    </data>
+    <data name="Error" xml:space="preserve">
+        <value>Błąd</value>
+    </data>
+    <data name="Exception.Message" xml:space="preserve">
+        <value>Komunikat</value>
+    </data>
+    <data name="Exception.StackTrace" xml:space="preserve">
+        <value>Ścieżka wywołania</value>
+    </data>
+</root>

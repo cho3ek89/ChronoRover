@@ -4,6 +4,8 @@ using ChronoRover.UI.Settings.Models;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
+using Microsoft.Extensions.Localization;
+
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -21,17 +23,17 @@ public partial class SignalTypeSelectViewModel : ObservableObject
     [SuppressMessage("ReSharper", "PropertyCanBeMadeInitOnly.Local")]
     public partial IReadOnlyCollection<SignalTypeListItem> SignalTypes { get; private set; }
 
-    public SignalTypeSelectViewModel(ISettingsManager settingsManager)
+    public SignalTypeSelectViewModel(ISettingsManager settingsManager, IStringLocalizer<App> localizer)
     {
         _settingsManager = settingsManager;
 
         SignalTypes =
         [
-            new SignalTypeListItem(SignalType.Dcf77, "Germany", "Mainflingen"),
-            new SignalTypeListItem(SignalType.Wwvb, "USA", "Fort Collins"),
-            new SignalTypeListItem(SignalType.Jjy, "Japan", "Tamura/Saga"),
-            new SignalTypeListItem(SignalType.Bpc, "China", "Shangqiu"),
-            new SignalTypeListItem(SignalType.Msf, "United Kingdom", "Anthorn"),
+            new SignalTypeListItem(SignalType.Dcf77, localizer["Country.Germany"], localizer["City.Mainflingen"]),
+            new SignalTypeListItem(SignalType.Wwvb, localizer["Country.USA"], localizer["City.FortCollins"]),
+            new SignalTypeListItem(SignalType.Jjy, localizer["Country.Japan"], localizer["City.TamuraSaga"]),
+            new SignalTypeListItem(SignalType.Bpc, localizer["Country.China"], localizer["City.Shangqiu"]),
+            new SignalTypeListItem(SignalType.Msf, localizer["Country.UnitedKingdom"], localizer["City.Anthorn"]),
         ];
 
         SelectedSignalType = SignalTypes

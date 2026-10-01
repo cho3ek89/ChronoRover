@@ -7,6 +7,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
 using SoundFlow.Abstracts;
@@ -58,6 +59,7 @@ public partial class SignalViewModel : ObservableObject, IDisposable
     private readonly ISettingsManager _settingsManager;
     private readonly IWaveGeneratorBuilder _waveGeneratorBuilder;
     private readonly ILogger<SignalViewModel> _logger;
+    private readonly IStringLocalizer<App> _localizer;
     private readonly IMessenger _messenger;
     private readonly AudioEngine _engine;
 
@@ -68,6 +70,7 @@ public partial class SignalViewModel : ObservableObject, IDisposable
         ISettingsManager settingsManager,
         IWaveGeneratorBuilder waveGeneratorBuilder,
         ILogger<SignalViewModel> logger,
+        IStringLocalizer<App> localizer,
         IMessenger messenger,
         AudioEngine engine,
         DateTimeSignalTypeViewModel dateTimeSignalTypeViewModel,
@@ -78,6 +81,7 @@ public partial class SignalViewModel : ObservableObject, IDisposable
         _settingsManager = settingsManager;
         _waveGeneratorBuilder = waveGeneratorBuilder;
         _logger = logger;
+        _localizer = localizer;
         _messenger = messenger;
         _engine = engine;
         DateTimeSignalTypeViewModel = dateTimeSignalTypeViewModel;
@@ -115,7 +119,9 @@ public partial class SignalViewModel : ObservableObject, IDisposable
                 var ex = task.Exception;
                 const string message = "An error occurred while starting signal generation.";
                 _logger?.LogError(ex, message);
-                _messenger.Send(new ErrorMessage(message, ex));
+
+                var messageLocalized = _localizer["Message.SignalGenerationStartError"].Value;
+                _messenger.Send(new ErrorMessage(messageLocalized, ex));
             }
             else
             {
@@ -149,7 +155,9 @@ public partial class SignalViewModel : ObservableObject, IDisposable
                 var ex = task.Exception;
                 const string message = "An error occurred while stopping signal generation.";
                 _logger?.LogError(ex, message);
-                _messenger.Send(new ErrorMessage(message, ex));
+
+                var messageLocalized = _localizer["Message.SignalGenerationStopError"].Value;
+                _messenger.Send(new ErrorMessage(messageLocalized, ex));
             }
             else
             {

@@ -1,0 +1,9 @@
+ChronoRover to precyzyjny generator sygnału czasu, który emuluje oficjalne transmisje sygnału czasu nadawane na falach długich, umożliwiając synchronizację zegarków sterowanych radiowo z dokładnością zegara atomowego za pomocą głośnika telefonu lub słuchawek.
+
+Obecnie obsługiwane są następujące sygnały: DCF77 (Niemcy), MSF (Wielka Brytania), WWVB (Stany Zjednoczone), JJY (Japonia) oraz BPC (Chiny).
+
+Niezależnie od tego, czy jesteś miłośnikiem zegarków, kolekcjonerem, czy po prostu zależy Ci na możliwie najdokładniejszym czasie, ChronoRover zamienia Twój smartfon w przenośny nadajnik sygnału czasu.
+
+Idealne rozwiązanie dla właścicieli zegarków Casio i Citizen mieszkających poza zasięgiem oficjalnych nadajników sygnału czasu!
+
+**UWAGA! Ta aplikacja generuje głośne dźwięki o wysokich częstotliwościach, które mogą powodować dyskomfort lub potencjalnie uszkodzić słuch! Opuść pomieszczenie na czas transmisji.**

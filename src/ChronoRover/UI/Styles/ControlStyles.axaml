@@ -30,7 +30,8 @@
     <Style Selector="TextBlock.CmdBarHeader">
         <Setter Property="Foreground" Value="{DynamicResource DefaultColor}" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="{StaticResource OrbitronMedium}" />
+        <Setter Property="FontFamily" Value="Inter" />
+        <Setter Property="LetterSpacing" Value="2" />
     </Style>
 
     <Style Selector="TextBlock.text, SelectableTextBlock.text">
@@ -83,6 +84,7 @@
 
     <Style Selector="NavigationPage /template/ Button#PART_BackButton">
         <Setter Property="Width" Value="{StaticResource NavPageBackButtonWidth}" />
+        <Setter Property="ToolTip.ServiceEnabled" Value="False" />
     </Style>
 
     <Style Selector="CommandBarButton PathIcon">
