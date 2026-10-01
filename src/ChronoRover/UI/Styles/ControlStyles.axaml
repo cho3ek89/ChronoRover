@@ -84,6 +84,7 @@
 
     <Style Selector="NavigationPage /template/ Button#PART_BackButton">
         <Setter Property="Width" Value="{StaticResource NavPageBackButtonWidth}" />
+        <Setter Property="ToolTip.ServiceEnabled" Value="False" />
     </Style>
 
     <Style Selector="CommandBarButton PathIcon">
