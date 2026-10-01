@@ -1,0 +1,2 @@
+- Adding Polish language support.
+- Updating the dependencies.
